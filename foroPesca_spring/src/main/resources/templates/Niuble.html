@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Ñuble</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Código para implementar el style propio de la página-->
+    <link rel="stylesheet" th:href="@{/CSS/PlantillaRios.css}">
+
+</head>
+
+<body>
+
+    <!--Implementamos el fragment de la Barra de Navegación-->
+    <th:block th:replace="fragments/navbar :: navbar"></th:block>
+    <!--Cuadro con Imagenes del lugar especificado-->
+    <div id="Todo">
+
+        <div id="dividir-Pagina-2" class="row p-2">
+
+            <div id="" class="col">
+                <div id="Fila1" class="mati">
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble1.png}" alt="">
+                    </div>
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble2.png}" alt="">
+                    </div>
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble3.png}" alt="">
+                    </div>
+                </div>
+                <div id="Fila2" class="mati">
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble4.png}" alt="">
+                    </div>
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble5.jpg}" alt="">
+                    </div>
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble6.jpg}" alt="">
+                    </div>
+                </div>
+                <div id="Fila3" class="mati">
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble7.jpg}" alt="">
+                    </div>
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble8.jpg}" alt="">
+                    </div>
+                    <div id="collage" class="element"><img class="collage" th:src="@{/img/Rio ñuble/ñuble9.jpg}" alt="">
+                    </div>
+                </div>
+
+            </div>
+            <!--Fin del cuadro de imágenes-->
+            <!--Inicio de la tabla de información-->
+            <div id="Seccion2" class="col">
+                <h1 id="tituloInfo">Información Rio Ñuble</h1>
+                <!--Implementamos el fragment de la tabla de datos de la locación requerida-->
+                <th:block th:replace="fragments/datosLugar :: datosLugar"></th:block>
+            </div>
+        </div>
+        <!--Fin de la tabla de información-->
+    </div>
+    <!--Bloque donde se verifica si existe un usuario logueado-->
+    <th:block th:if="${session.usuarioLogueado==null}">
+        <!--En caso de no estar logueado se le mostrara un tipo de vista con comentarios pero sin poder hacerlo-->
+        <div class="contenedor">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" c : ${listaComentarios}">
+                        <td scope="row" th:text="${c.getIdUsuario().getNombre()}+' '+${c.getIdUsuario().getApellido()}">
+                        </td>
+                        <td th:text="${c.getTexto()}"></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-6">
+                <form action="#" th:action="@{/VIIIregion/Niuble}" method="POST" th:object="${nuevoComentario}">
+                    <div class="form-group" th:each=" u : ${listaUbicaciones}">
+                        <p readonly="readonly" style="background-color: aliceblue;"> Recuerde que debe iniciar sesión
+                            para comentar, si no lo ha hecho haga click en enviar</p>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </th:block>
+    <!--En caso de estar logueado se le permitira dejar un comentario cumpliendo los parámetros indicados-->
+    <th:block th:unless="${session.usuarioLogueado==null}">
+        <div class="contenedor">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Comentario</th>
+                        <th:block th:if="${session.usuarioLogueado.getId()<=3}">
+                            <th scope="col">Eliminar Comentario</th>
+                        </th:block>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each=" c : ${listaComentarios}">
+                        <td scope="row" th:text="${c.getIdUsuario().getNombre()}+' '+${c.getIdUsuario().getApellido()}">
+                        </td>
+                        <td th:text="${c.getTexto()}"></td>
+                        <th:block th:if="${session.usuarioLogueado.getId()<=3}">
+                            <td>
+                                <a class="btn btn-warning btn-xs"
+                                    th:href="@{/VIIIregion/Niuble/deleteComentario/} + ${c.getId()}" method="GET"
+                                    th:text="Eliminar" title="Eliminar Comentario"></a>
+                            </td>
+                        </th:block>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="col-6">
+                <form action="#" th:action="@{/VIIIregion/Niuble}" method="POST" th:object="${nuevoComentario}">
+                    <!--Aplicamos el fragment del formulario necesario para crear un comentario-->
+                    <th:block th:replace="fragments/formularioCrearComentario :: formularioCrearComentario"></th:block>
+                </form>
+            </div>
+
+        </div>
+    </th:block>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script>
+        function validaFormulario() {
+            var nombreEscrito = document.getElementById(nombreTf).value;
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

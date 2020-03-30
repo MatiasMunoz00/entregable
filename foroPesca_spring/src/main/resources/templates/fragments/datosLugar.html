@@ -1,0 +1,56 @@
+<th:block th:fragment="datosLugar">
+    <div id="TablaInfo">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Datos Del Lugar:</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each=" a : ${listaAguas}">
+
+                    <td>Tipo de agua:</td>
+                    <th:block th:if="${a.getId()<1}">
+                        <td id="aguaTipo"></td>
+                    </th:block>
+                    <th:block th:unless="${a.getId()<1}">
+                        <td id="aguaNombre" th:text="${a.getTipo()}"></td>
+                    </th:block>
+                </tr>
+                <tr th:each=" a : ${listaAguas}">
+
+                    <td>Nombre:</td>
+                    <th:block th:if="${a.getId()<1}">
+                        <td></td>
+                    </th:block>
+                    <th:block th:unless="${a.getId()<1}">
+                        <td id="aguaNombre" th:text="${a.getNombre()}"></td>
+                    </th:block>
+                </tr>
+                <tr th:each=" r : ${listaRegiones}">
+                    <td id="regionNombre">Region:</td>
+                    <td th:text="${r.getNombre()}"></td>
+                </tr>
+                <tr th:each=" u : ${listaUbicaciones}">
+                    <td id="ubicacionSector">Sector:</td>
+                    <td th:text="${u.getSector()}"></td>
+                </tr>
+                <tr th:each=" u : ${listaUbicaciones}">
+                    <td id="ubicacionNombre">Se recomienda la pesca:</td>
+                    <td th:text="${u.getNombre()}"></td>
+                </tr>
+                <tr th:each=" a : ${listaAguas}">
+
+                    <td id="pecesTipo">Tipo de pez:</td>
+                    <th:block th:if="${a.getId()<1}">
+                        <td th:text="${a.getPecesList()}"></td>
+                    </th:block>
+                    <th:block th:unless="${a.getId()<1}">
+                        <td th:text="${a.getPecesList()}"></td>
+                    </th:block>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</th:block>

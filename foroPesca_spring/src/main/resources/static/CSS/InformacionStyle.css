@@ -1,0 +1,29 @@
+body{
+    background: white
+}
+#container-fluid{
+    max-height: 100%;
+}
+.card-img-top1{
+    max-height: 100%;
+    max-width: 100%;
+}
+.titulo{
+    color: black;
+}
+
+.texto{
+    color: black;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.contacto{
+    color: blue;
+}
+
+
+.card-img-top{
+    width: 200px;
+    height: 100%;
+    
+}

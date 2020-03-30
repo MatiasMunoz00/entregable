@@ -1,0 +1,170 @@
+/*  C:\Users\Addis Flerida Muñoz\Desktop\Proyecto LAB II\Proyecto IMG\FondoLogin.jpg */
+
+body{
+    background: url(https://i.ibb.co/4S3SQcz/Fondo-Login.jpg)no-repeat center top;
+    background-size: cover;
+
+}
+
+
+.contenedor{
+    margin: 5px;
+}
+#nombreCuadro{
+    text-align: center;
+    width: 150px;
+
+}
+#apellidoCuadro{
+    text-align: center;
+    width: 150px;
+    
+}
+#cuadroContrasena{
+    height: 45%;
+    
+}
+.principal{
+    width: 1100px;
+    max-width: 400px;
+    height: 680px;
+    background: white;
+    margin: 100px auto;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #741181;
+}
+
+.logo{
+    top: 50px;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    background: #000;
+    position: relative;
+    border-radius: 50%;
+    transition:  200ms ease-in-out;
+    animation: procodepcgirar 10s infinite linear;
+    box-shadow: 0 0 50px #741181;
+    background: #741181;
+    background: linear-gradient(to right, #982fad, #741181);
+}
+
+.logo:hover {
+    animation: procodepcgirar 0.9s infinite linear;
+    box-shadow: 0 0 20px #741181;
+}
+
+.logo img{
+    border-radius: 50%;
+    font-size: 60px;
+    font-weight: 200;
+    line-height: 100px;
+}
+
+form {
+    top: 100px;
+    position: relative;
+}
+
+form input {
+    display: block;
+    margin: 10px auto;
+}
+
+form label {
+    font-size: 12px;
+}
+
+label{
+    color: #9a9393;
+    font-weight: bold;
+}
+
+label a{
+    color: #741181;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 200ms ease-in-out;
+}
+
+label a:hover{
+    color: #000;
+}
+
+input[type='email'], input[type='password']{
+    width: 60%;
+    outline: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    color: #741181;
+    font-size: 14px;
+    padding: 26px;
+    font-weight: 300;
+    border-bottom: 1px solid #741181;
+}
+
+input[type='submit']{
+    color: #fff;
+    width: 150px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 30px;
+    border-radius: 4px;
+    transition: 200ms ease-out;
+    box-shadow: 0 0 10px #982fad;
+    background: #982fad;
+    background: linear-gradient(to right, #982fad, #741181);
+}
+#CuadroMen{
+    text-align: center;
+    width: 100%;
+}
+#boton{
+    background: linear-gradient(to right, #982fad, #741181);
+    border: #741181;
+}
+
+input[type='submit']:hover{
+    font-weight: bold;
+    transform: scale(1.1);
+    box-shadow: 0 0 40px #741181;
+}
+#blabla{
+    text-align: center;
+}
+
+.fa-user{
+    color: #741181;
+    position: absolute;
+    top: 25px;
+    left: 56px;
+    font-size: 18px !important;
+    cursor: text;
+    transition: .2 ease-out;
+}
+
+.fa-lock{
+    color: #741181;
+    position: absolute;
+    top: 105px;
+    left: 56px;
+    font-size: 19px !important;
+    cursor: text;
+    transition: .2s ease-out;
+}
+
+[placeholder]::input-placeholder{
+    color: #741181;
+    padding-left: 10px;
+}
+
+[placeholder]:focus::input-placeholder{
+    transition: all 0.2s linear;
+    transform: translate(10px, 0);
+    opacity: 0;
+}

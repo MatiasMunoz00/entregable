@@ -1,0 +1,71 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Informacion</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Código para implementar el style propio de la página-->
+    <link rel="stylesheet" th:href="@{/CSS/InformacionStyle.css}">
+</head>
+
+<body>
+    <th:block th:replace="fragments/navbar :: navbar"></th:block>
+    <!-- SECCIÓN 1 -->
+    <div class="row p-3">
+        <div class="col">
+            <img class="card-img-top1" th:src="@{/img/info1.jpeg}" alt="">
+        </div>
+        <!-- SECCIÓN 2 -->
+        <div class="col">
+            <div class="card text-center">
+
+                <div class="card-body">
+                    <h4 class="titulo">Acerca de Fishing Sector</h4>
+                    <img class="card-img-top" th:src="@{img/logotipo.jpg}" alt="">
+                    <p class="texto" style="font-size: small; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Fishing Sector se creó a partir de un problema común en
+                        el ámbito de la pesca recreativa: no se conocen realmente todos los lugares que nos brinda
+                        nuestro país para poder pescar y mucho menos su ubicación exacta. Fishing Sector, es creada en
+                        el año 2020 por tres estudiantes
+                        de Ingieneria Civil Industrial mención Informática de la Universidad de la Frontera. Esta sitio
+                        web es dedicado
+                        especialmente
+                        a la pesca recreativa en nuestro país.
+                    </p>
+                    <div class="card-footer">
+                        <small class="contacto">Contactos:
+                            <h1></h1>
+                            Matias Muñoz: m.munoz48@ufromail.cl
+                            <h1></h1>
+                            Carlos Castillo: c.castillo15@ufromail.cl
+                            <h1></h1>
+                            Javiera Soto: j.soto16@ufromail.cl</small>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- SECCIÓN 3 -->
+        <div class="col">
+            <img class="card-img-top1" th:src="@{/img/info1.jpeg}" alt="">
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head >
+    <title th:src="@{/img/logotipo.jpg}">Fishing Sector</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Código para implementar el style propio de la página-->
+    <link rel="stylesheet" th:href="@{/CSS/InicioStyle.css}">
+
+</head>
+
+<body>
+    <th:block th:replace="fragments/navbar :: navbar"></th:block>
+    <!-- SECCIÓN 1 -->
+    <div id="servicios" class="row p-3">
+        <div class="col">
+            <div class="card text-center">
+                <img class="card-img-top" th:src="@{/img/servicio1.jpg}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Pesca Nocturna</h4>
+                    <p class="card-text-1" style="font-size: small;">Sección dedicada a la pesca nocturna.</p>
+                </div>
+                <button id="mostrar-mas-1" class="btn btn-primary">Mostrar más</button>
+            </div>
+        </div>
+        <!-- SECCIÓN 2 -->
+        <div class="col">
+            <div class="card text-center">
+                <img class="card-img-top" th:src="@{/img/servicio2.jpg}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Pesca con Mosca</h4>
+                    <p class="card-text-2" style="font-size: small;">Sección dedicada a la pesca con mosca
+                    </p>
+                </div>
+                <button id="mostrar-mas-2" href="#" class="btn btn-primary">Mostrar más</button>
+            </div>
+        </div>
+        <!-- SECCIÓN 3 -->
+        <div class="col">
+            <div class="card text-center">
+                <img class="card-img-top" th:src="@{/img/servicio3.jpg}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">Pesca con simuladores</h4>
+                    <p class="card-text-3" style="font-size: small;">Sección dedicada a la pesca con simuladores.</p>
+                </div>
+                <button id="mostrar-mas-3" href="#" class="btn btn-primary">Mostrar más</button>
+
+            </div>
+        </div>
+    </div>
+    <div id="secciones_mostrar_mas">
+        <!-- Seccion 1 mostrar mas -->
+        <div style="display: none;" id="seccion1" class="row p-2">
+                <div class="form-group">
+                    <h5>Pesca Nocturna</h5>
+                    <textarea readonly="readonly" id="textAreaC" class="form-control" name="" rows="3">-Este tipo de pesca tiene un nivel de dificultad alto por lo que se recomienda realizarla en grupo.
+-Suele realizarse desde orilla o en balsa, acompañado de una fuente potente de luz con direecion al cebo o al punto de extracción.
+-Se acostumbra que el cebo o señuelo sea brillante y con una gran capacidad de movimiento, gracias a esto el pez es capaz de guiarse por el movimiento y brillo de este.</textarea>
+                </div>
+        </div>
+        <!-- Seccion 2 mostrar mas -->
+        <div style="display: none;" id="seccion2" class="row p-2">
+            <div class="col">
+                <div class="form-group">
+                    <h5>Pesca con Mosca</h5>
+                    <textarea readonly="readonly" id="textAreaC" class="form-control" name="" rows="3">-La pesca con mosca es un tipo de pesca deportiva que usa principalmente una caña mosquera y un cebo o señuelo llamado mosca.
+                        -Se realiza fundamentalmente en zonas de aguas continentales o fluviales, como son ríos, riachuelos, pantanos, lagos o embalses y con mucha menos frecuencia puede ser practica en agua salada.
+-Podemos diferenciar dos tipos de pesca con mosca: 
+Con mosca seca, se usan muestras de insectos en su fase adulta, su comportamiento se basa en ir volando y posarse en la superficie del agua para depositar sus larvas.
+Con mosca ahogada, se utilizan señuelos para pescar con cola de rata en medias aguas o en profundidad, moscas que imitan a pequeñas larvas o ninfas que en su estado natural se encuentra bajo la superficie.</textarea>
+                </div>
+            </div>
+        </div>
+        <!-- Seccion 3 mostrar mas -->
+        <div style="display: none;" id="seccion3" class="row p-2">
+            <div class="col">
+                <div class="form-group">
+                    <h5>Pesca con Simuladores</h5>
+                    <textarea readonly="readonly" id="textAreaC" class="form-control" name="" rows="3">-Tambien es conocida como pesca con señuelo.
+-Un señuelo de pesca no es más que la imitación de una presa, tal y como  un pez nadador o una cucharilla giratoria, animándola para que pique e  iniciar el ataque.
+-Esta técnica de pesca es muy activa y deportiva, requiere del conocimiento de las diferentes prácticas del movimiento de los señuelos, exigiendo la selección más pertinente de los materiales de pesca.
+-El tipo y el tamaño de un señuelo dependen generalmente de las especies de peces en las que estás interesado. A pesar de que no hay un papel definido para los distintos señuelos, la idea es que un señuelo coincida de la mejor manera posible con la presa natural de un pez.
+                </textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CODIGO PARA MOSTRAR Y OCULTAR SECCION 1-->
+    <script>
+        $(document).ready(function () {
+            $(document.getElementById('mostrar-mas-1')).click(function () {
+                $(document.getElementById('seccion1')).toggle(1000, function () {
+
+                });
+            }); onsubmit = "return false"
+        });
+    </script>
+    <!-- CODIGO PARA MOSTRAR Y OCULTAR SECCION 2-->
+    <script>
+        $(document).ready(function () {
+            $(document.getElementById('mostrar-mas-2')).click(function () {
+                $(document.getElementById('seccion2')).toggle(1000, function () {
+
+                });
+            }); onsubmit = "return false"
+        });
+    </script>
+    <!-- CODIGO PARA MOSTRAR Y OCULTAR SECCION 3-->
+    <script>
+        $(document).ready(function () {
+            $(document.getElementById('mostrar-mas-3')).click(function () {
+                $(document.getElementById('seccion3')).toggle(1000, function () {
+
+                });
+            }); onsubmit = "return false"
+        });
+    </script>
+    <!-- JavaScript Carrusel -->
+    <script type="text/javascript">
+        // Call carousel manually
+        $('#myCarouselCustom').carousel();
+
+        // Go to the previous item
+        $("#prevBtn").click(function () {
+            $("#myCarouselCustom").carousel("prev");
+        });
+        // Go to the previous item
+        $("#nextBtn").click(function () {
+            $("#myCarouselCustom").carousel("next");
+        });
+    </script>
+    <script type="text/javascript">
+        $('.carousel').carousel({
+            interval: 8000,
+            pause: true,
+            wrap: false
+        });
+    </script>
+    <!-- Optional JavaScript -->
+    <script>
+        function validaFormulario() {
+            var nombreEscrito = document.getElementById(nombreTf).value;
+        }
+    </script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

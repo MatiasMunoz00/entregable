@@ -1,0 +1,66 @@
+#Container{
+    padding-top: 2%;
+    padding-right:4%;
+    padding-left: 4%;
+    display: table;
+    height: auto;
+    float: left;
+    width: 70%;
+
+}
+body{
+    background: url(https://i.ibb.co/4S3SQcz/Fondo-Login.jpg)no-repeat center top;
+    background-size: cover;
+
+}
+div.mati{
+    display: table-row;
+}
+div.element{
+    float: left;
+    display: table-column;
+    width:auto;
+
+}
+.collage{
+    padding: 1%;
+    width: 100px;
+    height: 100px;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    
+}
+.collage:hover {
+    -ms-transform: scale(1.5); /* IE 9 */
+    -webkit-transform: scale(1.5); /* Safari 3-8 */
+    transform: scale(1.5); 
+  }
+#tituloInfo{
+    color: aliceblue;
+    
+}
+
+#TablaInfo{
+    background-color: #fff;
+    } 
+
+.pb-cmnt-container {
+        font-family: Lato;
+        margin-top: 30px;
+    }
+
+.pb-cmnt-textarea {
+        resize: none;
+        padding: 10px;
+        height: 130px;
+        width: 100%;
+        border: 1px solid #F2F2F2;
+    }
+#TextArea{
+    background-color: tan;
+}
+.card-body{
+    background-color: sienna;
+}

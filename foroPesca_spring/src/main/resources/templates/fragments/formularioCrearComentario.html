@@ -1,0 +1,18 @@
+<th:block th:fragment="formularioCrearComentario">
+    <div class="form-group" th:each=" u : ${listaUbicaciones}">
+        <label for="" style="background-color: aliceblue;"> Deje su Comentario</label>
+        <input type="text" class="form-control" placeholder="Escriba Aqui" th:field="*{texto}">
+        <br>
+        <p readonly="readonly" th:text="' La Id de su ubicacion es: '+${u.getId()}"
+            style="background-color: aliceblue;"></p>
+        <input type="text" class="form-control" placeholder="Id de la Ubicación"  th:field="*{idUbicacion}">
+        <br>
+        <p readonly="readonly" th:text="'El Id de Usuario es : '+${session.usuarioLogueado.getId()}"
+            style="background-color: aliceblue;"></p>
+
+        <input type="text" class="form-control" placeholder="Id del Usuario" th:field="*{idUsuario}">
+        <br>
+        <p readonly="readonly" style="background-color: aliceblue;">Se le sugiere revisar los valores ingresados, que estos esten correctos y en sus respectivos campos</p>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</th:block>

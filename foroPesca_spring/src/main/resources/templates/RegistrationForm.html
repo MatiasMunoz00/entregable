@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/CSS/RegistrationStyle.css}">
+</head>
+
+<body>
+    <th:block th:replace="fragments/navbar :: navbar"></th:block>
+    <div class="contenedor">
+        <div class="principal" style="height: 680px">
+            <div class="logo">
+                <img th:src="@{/img/logotipo.jpg}" width="100%" height="100%" class="d-inline-block align-top" alt="">
+            </div>
+            <form action="#" th:action="@{/Login/RegistrationForm}" method="POST" th:object="${nuevoUsuario}">
+                <div class="form-row mb-2">
+                    <div class="form-group col-md-6">
+                        <label class="font-weight-bold">Nombre <span class="text-danger">*</span></label>
+                        <input id="nombreCuadro" type="text" class="form-control" placeholder="nombre"
+                            th:field="*{nombre}">
+                    </div>
+                    <div id="apellid" class="form-group col-md-6">
+                        <label class="font-weight-bold">Apellido <span class="text-danger">*</span></label>
+                        <input id="apellidoCuadro" type="text" class="form-control" placeholder="apellido"
+                            th:field="*{apellido}">
+                    </div>
+                </div>
+                <div id="CuadroMen" class="form-group mb-3" style="display:flow-root">
+                    <label class="font-weight-bold">Correo electrónico <span class="text-danger">*</span></label>
+                    <input id="blabla" type="email" class="form-control" placeholder="Ingresar Email"
+                        th:field="*{correo}">
+                </div>
+                <div class="form-group mb-3">
+                    <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
+                    <input id="cuadroContrasena" style="height: 45%;" type="password" class="form-control"
+                        placeholder="Ingresa una contraseña" th:field="*{contrasena}">
+                </div>
+                <div class="form-group mb-5">
+                </div>
+                <button id="boton" class="btn btn-primary width-100">Regístrate</button>
+            </form>
+            </form>
+        </div>
+    </div>
+
+
+    <!----Enlce -->
+    <a href="www.google.com" class="enlace" target="blank_"></a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</body>
+
+</html>

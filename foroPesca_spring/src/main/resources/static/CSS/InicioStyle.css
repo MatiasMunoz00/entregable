@@ -1,0 +1,25 @@
+.img-carousel{
+    max-width: 100%;
+}
+#portada{
+    max-width: 100%;
+    max-height: 100%;
+}
+#servicios{
+    max-width: 100%;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #066d77;
+    border-color: #007bff;
+}
+.btn-outline-success {
+    background-color: #066d77;
+    color: #f7f7f7;
+    border-color: #066d77;
+}
+#textAreaC{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: block;
+    background: white;
+}
